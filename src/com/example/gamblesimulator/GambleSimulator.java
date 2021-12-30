@@ -8,18 +8,19 @@ public class GambleSimulator {
     public static  double totalStake = 0;
     public static final int WON_GAME = 1;
     public static final int LOST_GAME = 0;
-
+    public static int winCount = 0;
+    public static int loseCount = 0;
+    public static final int YES = 1;
 
     public static void main(String[] args) {
         gamble();
     }
     static void gamble(){
         int days = 1;
-        int winCount = 0;
-        int loseCount = 0;
-        while (days <= 30) {
+        Scanner scanner = new Scanner(System.in);
+        while (days <= 3) {
             System.out.println("How many times you want to play the game for day " + days + ":" );
-            Scanner scanner = new Scanner(System.in);
+
             int gamePlayed = scanner.nextInt();
             days++;
             everyDayStake = everyDayStake + 100;
@@ -61,8 +62,14 @@ public class GambleSimulator {
         }else if(winCount >loseCount){
             winCount = winCount - loseCount;
             System.out.println("In one month Player has won by: " + winCount + " times");
+            System.out.println("Do you want to play again: choose 1 " + "for YES:");
+            int value = scanner.nextInt();
+            if( value == YES){
+                gamble();
+            }
         }else{
             System.out.println("Chances of winning or losing game is equal after playing for a month are same");
         }
     }
+
 }
