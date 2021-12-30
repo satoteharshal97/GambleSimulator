@@ -19,5 +19,7 @@ public class GambleSimulator {
                 System.out.println("Player lost :" + (eachGameBet) + "$");
                 break;
         }
+        everyDayStake = (everyDayStake * 50) / 100;
+        System.out.println("Stake would become: " + everyDayStake);
     }
 }
