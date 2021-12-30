@@ -41,7 +41,17 @@ public class GambleSimulator {
                 everyDayStake = (everyDayStake * 50) / 100;
                 System.out.println("Stake would become: " + everyDayStake  + "$");
             }
-            System.out.println("Total bet for the  day :" + totalBet);
+            if(loseCount > winCount){
+                loseCount = loseCount - winCount;
+                System.out.println("For the day player has lost by : " + loseCount + " times");
+                System.out.println("This day is player unluckiest day");
+            }else if(winCount >loseCount){
+                winCount = winCount - loseCount;
+                System.out.println("For the day Player has won by: " + winCount + " times");
+                System.out.println("This day is player luckiest day");
+            }else{
+                System.out.println("Chances of winning or losing game is equal after playing for day");
+            }
         }
         totalStake = totalStake + everyDayStake;
         System.out.println("Total stake after playing for 30 days is: " + totalStake  + "$");
@@ -49,7 +59,7 @@ public class GambleSimulator {
             loseCount = loseCount - winCount;
             System.out.println("In one month Player has lost by : " + loseCount + " times");
         }else if(winCount >loseCount){
-            winCount = winCount -loseCount;
+            winCount = winCount - loseCount;
             System.out.println("In one month Player has won by: " + winCount + " times");
         }else{
             System.out.println("Chances of winning or losing game is equal after playing for a month are same");
