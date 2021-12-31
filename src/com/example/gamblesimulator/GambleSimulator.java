@@ -18,7 +18,7 @@ public class GambleSimulator {
     static void gamble(){
         int days = 1;
         Scanner scanner = new Scanner(System.in);
-        while (days <= 3) {
+        while (days <= 30) {
             System.out.println("How many times you want to play the game for day " + days + ":" );
 
             int gamePlayed = scanner.nextInt();
